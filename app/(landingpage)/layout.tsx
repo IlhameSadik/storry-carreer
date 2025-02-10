@@ -7,7 +7,7 @@ const landingpageLayout= ({children}:{children:React.ReactNode}) => {
     <main>
         {children}
     </main>
-
+    
     </div>
   )
 }
