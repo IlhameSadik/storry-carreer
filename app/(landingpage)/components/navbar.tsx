@@ -25,17 +25,17 @@ const Navbar = () => {
     <div className="py-5 fixed z-50 w-full bg-background">
       <div className="flex max-w-7xl mx-auto px-5 items-center justify-between">
         <img
-          src="/logo-black.svg"
+          src="/logo-black.png"
           className="dark:hidden"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           alt="logo"
         />
         <img
-          src="/logo-white.svg"
+          src="/logo-white.png"
           className="hidden dark:block"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           alt="logo"
         />
         
@@ -57,7 +57,7 @@ const Navbar = () => {
         
         <div className="flex items-center gap-x-2">
           <ModeToggle />
-          
+          <button>Log In</button>
           {/* Mobile Navigation */}
           <div className="md:hidden flex">
             <Sheet>
@@ -66,20 +66,20 @@ const Navbar = () => {
             <Menu size={20} />
             </div>
             </SheetTrigger>
-              <SheetContent side="left">
+              <SheetContent side="right">
                 <div className="flex flex-col gap-4 mt-5">
                 <img
-          src="/logo-black.svg"
+          src="/logo-black.png"
           className="dark:hidden"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           alt="logo"
         />
         <img
-          src="/logo-white.svg"
+          src="/logo-white.png"
           className="hidden dark:block"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           alt="logo"
         />
                   {NavLinks.map(({ href, label }) => (
