@@ -10,7 +10,15 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Plus } from "lucide-react";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs' ;
+import { Button } from "@/components/ui/button";
 
 const NavLinks = [
   { label: "Home", href: "/" },
@@ -27,15 +35,15 @@ const Navbar = () => {
         <img
           src="/logo-black.png"
           className="dark:hidden"
-          width={150}
-          height={150}
+          width={120}
+          height={120}
           alt="logo"
         />
         <img
           src="/logo-white.png"
           className="hidden dark:block"
-          width={150}
-          height={150}
+          width={120}
+          height={120}
           alt="logo"
         />
         
@@ -57,7 +65,22 @@ const Navbar = () => {
         
         <div className="flex items-center gap-x-2">
           <ModeToggle />
-          <button>Log In</button>
+          <SignedOut>
+            <div className="md:block hidden">
+              <SignInButton mode="modal">
+                <Button>Log In</Button>
+              </SignInButton>
+            </div>
+          </SignedOut>
+          <SignedIn>
+            <Link href="/story">
+              <Button>
+                <Plus className="h-5 w-5 md:mr-1" />
+                <span className="md:block hidden">Create a story</span>
+              </Button>
+            </Link>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
           {/* Mobile Navigation */}
           <div className="md:hidden flex">
             <Sheet>
@@ -71,15 +94,15 @@ const Navbar = () => {
                 <img
           src="/logo-black.png"
           className="dark:hidden"
-          width={150}
-          height={150}
+          width={120}
+          height={120}
           alt="logo"
         />
         <img
           src="/logo-white.png"
           className="hidden dark:block"
-          width={150}
-          height={150}
+          width={120}
+          height={120}
           alt="logo"
         />
                   {NavLinks.map(({ href, label }) => (
@@ -95,6 +118,11 @@ const Navbar = () => {
                     </Link>
                   ))}
                 </div>
+                <SignedOut>
+                <SignInButton mode="modal">
+                  <Button>Log In</Button>
+                </SignInButton>
+              </SignedOut>
               </SheetContent>
             </Sheet>
           </div>
