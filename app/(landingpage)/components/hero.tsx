@@ -57,12 +57,13 @@ const Hero = () => {
 
       {/* Nouvelle Section Our Vision */}
       <motion.section
-        className="py-20 bg-gray-100 text-center px-5"
+        className="py-20 bg-blue-100 text-center px-5"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
+        
       >
-        <h2 className="text-3xl font-bold text-gray-800">
+        <h2 className="text-3xl text-gray-800">
           Our Vision
         </h2>
         <p className="max-w-3xl mx-auto text-lg text-gray-600 mt-4">
